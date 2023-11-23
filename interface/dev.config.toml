@@ -1,0 +1,6 @@
+[Django]
+ALLOWED_HOSTS = ['127.0.0.1', 'localhost']
+SECRET_KEY = "django-insecure-l@&w9+^28uilujxq7ta4__0*mi9i%pv!tvf_!jjo08d5&^%ey_"
+
+[Celery]
+BROKER_URL = "redis://localhost:6379/0"
