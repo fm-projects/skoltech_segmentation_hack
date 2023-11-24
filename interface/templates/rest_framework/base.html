@@ -1,0 +1,9 @@
+{% extends "rest_framework/base.html" %}
+{% load static %}
+{% block branding %}
+    <a class="navbar-brand" rel="nofollow" href="/api">Satellite Recognizion</a>
+{% endblock branding %}
+{% block style %}
+    {{ block.super }}
+    <link rel="stylesheet" href="{% static "css/drf-theme.css" %}" />
+{% endblock style %}

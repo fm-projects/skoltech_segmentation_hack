@@ -7,6 +7,8 @@ from .tasks import process_task
 
 
 class TaskViewSet(mixins.CreateModelMixin, mixins.RetrieveModelMixin, mixins.ListModelMixin, viewsets.GenericViewSet):
+    """Create, retrieve and list tasks."""
+
     queryset = Task.objects.all()
 
     def get_serializer_class(self):

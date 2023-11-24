@@ -9,15 +9,13 @@ class Task(models.Model):
         DONE = 2
         ERROR = 3
 
-    original_image = models.ImageField(upload_to="originals", verbose_name="Исходное изображение")
-    processed_image = models.ImageField(upload_to="processed", blank=True, verbose_name="Обработанное изображение")
-    status = models.IntegerField(choices=Status.choices, default=Status.QUEUED, verbose_name="Статус")
-    added = models.DateTimeField(auto_now_add=True, verbose_name="Дата добавления")
+    original_image = models.ImageField(upload_to="originals")
+    processed_image = models.ImageField(upload_to="processed", blank=True)
+    status = models.IntegerField(choices=Status.choices, default=Status.QUEUED)
+    added = models.DateTimeField(auto_now_add=True, verbose_name="Created")
 
     class Meta:
         ordering = ["-added"]
-        verbose_name = "Задача"
-        verbose_name_plural = "Задачи"
 
 
 class TaskSerializer(serializers.ModelSerializer):

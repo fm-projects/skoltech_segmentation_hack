@@ -7,8 +7,8 @@ class TaskAdmin(admin.ModelAdmin):
     list_display = ("id", "status", "added")
     list_filter = ("status", "added")
     search_fields = ("id",)
-    readonly_fields = ("id", "added")
+    readonly_fields = ("id", "added", "status")
     fieldsets = (
-        ("Основное", {"fields": ("id", "status", "added")}),
-        ("Изображения", {"fields": ("original_image", "processed_image")}),
+        ("Primary", {"fields": ("id", "status", "added")}),
+        ("Images", {"fields": ("original_image", "processed_image")}),
     )
